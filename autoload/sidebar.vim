@@ -163,7 +163,7 @@ function! sidebar#toggle(name)
     endfor
 
     if found_desired_nr > 0
-        call s:close(a:name)
+        execute found_desired_nr . 'wincmd w'
     else
         call s:wait_for_close(s:sidebars[a:name].position)
         call s:open(a:name)
