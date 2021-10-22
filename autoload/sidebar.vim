@@ -185,13 +185,11 @@ function! sidebar#close_side(position)
 endfunction
 
 function! sidebar#close_all()
-    call s:save_view()
     for [name, desc] in items(s:sidebars)
         if s:get_win(name) > 0
             call s:close(name)
         endif
     endfor
-    call s:restore_view()
 endfunction
 
 function! sidebar#save_session()
